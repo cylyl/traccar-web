@@ -1,0 +1,6 @@
+version: "3.2"
+services:
+    traccar-web:
+        image: gcr.io/optimum-nebula-230307/traccar-web:latest
+        ports:
+          - "3000:3000"

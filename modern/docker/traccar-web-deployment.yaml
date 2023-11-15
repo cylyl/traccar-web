@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: traccar-web
+  name: traccar-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: traccar-web
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.0 (40646f47)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: traccar-web
+    spec:
+      containers:
+        - image: gcr.io/optimum-nebula-230307/traccar-web:latest
+          name: traccar-web
+          ports:
+            - containerPort: 3000
+          resources: {}
+      restartPolicy: Always
+status: {}
